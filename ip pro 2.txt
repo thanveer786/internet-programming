@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click the Star</title>
+  <style>
+    body { margin: 0; overflow: hidden; text-align: center; background: #f0f8ff; font-family: Arial; }
+    #star { position: absolute; width: 50px; height: 50px; cursor: pointer; }
+    #score, #timer { position: fixed; top: 10px; font-size: 20px; color: #333; }
+    #score { left: 10px; } #timer { right: 10px; }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <div id="timer">Time: 30s</div>
+  <img id="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Star_icon-72a7cf.svg/512px-Star_icon-72a7cf.svg.png" alt="Star">
+  <script>
+    const star = document.getElementById("star"), scoreEl = document.getElementById("score"), timerEl = document.getElementById("timer");
+    let score = 0, time = 30;
+    star.addEventListener("click", () => {
+      scoreEl.textContent = `Score: ${++score}`;
+      star.style.top = Math.random() * (window.innerHeight - 50) + "px";
+      star.style.left = Math.random() * (window.innerWidth - 50) + "px";
+    });
+    const timer = setInterval(() => {
+      if (--time <= 0) {
+        clearInterval(timer);
+        alert(`Game Over! Your score is ${score}`);
+        star.style.display = "none";
+      }
+      timerEl.textContent = `Time: ${time}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
