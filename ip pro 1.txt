@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Specification Form</title>
+</head>
+<body>
+    <h1>Laptop Specification Form</h1>
+    <form action="/submit" method="post">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- Password Field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <!-- Checkbox for OS Specification -->
+        <fieldset>
+            <legend>OS Specification:</legend>
+            <input type="checkbox" id="macos" name="os[]" value="macOS">
+            <label for="macos">macOS</label><br>
+            <input type="checkbox" id="windows" name="os[]" value="Windows">
+            <label for="windows">Windows</label><br>
+            <input type="checkbox" id="ubuntu" name="os[]" value="Ubuntu">
+            <label for="ubuntu">Ubuntu</label>
+        </fieldset>
+        <br>
+
+        <!-- Radio Button for Brand Specification -->
+        <fieldset>
+            <legend>Brand Specification:</legend>
+            <input type="radio" id="hp" name="brand" value="HP" required>
+            <label for="hp">HP</label><br>
+            <input type="radio" id="lenova" name="brand" value="Lenova">
+            <label for="lenova">Lenova</label><br>
+            <input type="radio" id="dell" name="brand" value="Dell">
+            <label for="dell">Dell</label><br>
+            <input type="radio" id="apple" name="brand" value="Apple">
+            <label for="apple">Apple</label>
+        </fieldset>
+        <br>
+
+        <!-- Text Area for Address -->
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your address here..."></textarea>
+        <br><br>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
